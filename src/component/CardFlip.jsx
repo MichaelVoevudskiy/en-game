@@ -1,12 +1,12 @@
 import styles from './CardFlip.module.css'
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 import Frontcard from './../CardImg/Front.png'
 
 const CardFlip = (props) => {
 
   const handleClick = () => {
 
-    if(props.clickCount == 1){
+    if(props.clickCount === 1){
       setTimeout(() => {
         props.deactivateAllAnimals();
         props.setClickCount(0);
