@@ -1,10 +1,11 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,12 +14,44 @@
   color: white;
 }
 
-.plate{
+.plate {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  max-height: 90%;
 }
 
+@keyframes example {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8);
+    background-color: rgb(87, 28, 143);
+    border: solid 2px  blueviolet;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.resetgamebt {
+  width: 100px;
+  height: 30px;
+  background-color: blueviolet;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+
+
+}
+
+.resetgamebt:hover {
+  animation-name: example;
+  animation-duration: 0.5s;
+}
 
 
 /* Для мобильных устройств */
@@ -38,6 +71,6 @@
 /* Для десктопов */
 @media (min-width: 1025px) {
   .plate {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
- }
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
