@@ -3,7 +3,7 @@ import Frontcard from './../CardImg/Front.png'
 import React from 'react';
 
 
-import sdFail from './../CardSd/Fail.wav'; // Добавляем звук для ошибки
+// import sdFail from './../CardSd/Fail.wav'; // Добавляем звук для ошибки
 // import sdSuccess from './../CardSd/Success.wav'; // Добавляем звук для правильного ответа
 
 const CardFlip = (props) => {
@@ -26,8 +26,8 @@ const CardFlip = (props) => {
           props.setClickCount(0); // Сбрасываем счетчик кликов
           props.SelectedItems(null);  // Сбрасываем выбранные карточки
 
-          const audio = new Audio(sdFail);
-          audio.play();
+          // const audio = new Audio(sdFail);
+          // audio.play();
 
         }, 1000);
 
