@@ -54,13 +54,13 @@
     .cardContainer {
       perspective: 1000px;
       width: 100px;
-      height: 150px;
+      height: 130px;
       margin: 5px;
     }
 
     .card img{
       width: 100px;
-      height: 150px;
+      height: 130px;
     }
   }
   
