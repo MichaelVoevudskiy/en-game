@@ -13,8 +13,31 @@
   color: white;
 }
 
-.palte{
+.plate{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
+}
+
+
+
+/* Для мобильных устройств */
+@media (max-width: 600px) {
+  .plate {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Для планшетов */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .plate {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Для десктопов */
+@media (min-width: 1025px) {
+  .plate {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+ }
 }

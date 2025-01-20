@@ -24,23 +24,43 @@ import Whale from './CardImg/Whale.png'
 
 
 
+// let anim1 = [
+//   { id: 0, who: Cat, status: false},
+//   { id: 1, who: Chicken, status: false },
+//   { id: 2, who: Dog, status: false },
+//   { id: 3, who: Goat, status: false },
+//   { id: 4, who: Hamster, status: false },
+//   { id: 5, who: Parrot, status: false },
+//   { id: 6, who: Rooster, status: false },
+//   { id: 7, who: Turkey, status: false },
+//   { id: 8, who: Jellyfish, status: false },
+//   { id: 9, who: Octopus, status: false },
+//   { id: 10, who: Raccoon, status: false },
+//   { id: 11, who: Rhinoceros, status: false },
+//   { id: 12, who: Squirrel, status: false },
+//   { id: 13, who: Stingray, status: false },
+//   { id: 14, who: Tiger, status: false },
+//   { id: 15, who: Whale, status: false },
+// ]
+
+
 let anim1 = [
-  { id: 0, who: Cat, status: false },
-  { id: 1, who: Chicken, status: false },
-  { id: 2, who: Dog, status: false },
-  { id: 3, who: Goat, status: false },
-  { id: 4, who: Hamster, status: false },
-  { id: 5, who: Parrot, status: false },
-  { id: 6, who: Rooster, status: false },
-  { id: 7, who: Turkey, status: false },
-  { id: 8, who: Jellyfish, status: false },
-  { id: 9, who: Octopus, status: false },
-  { id: 10, who: Raccoon, status: false },
-  { id: 11, who: Rhinoceros, status: false },
-  { id: 12, who: Squirrel, status: false },
-  { id: 13, who: Stingray, status: false },
-  { id: 14, who: Tiger, status: false },
-  { id: 15, who: Whale, status: false },
+  { id: 0, who: Cat, status: false, found: false },
+  { id: 1, who: Chicken, status: false, found: false  },
+  { id: 2, who: Dog, status: false, found: false  },
+  { id: 3, who: Goat, status: false, found: false  },
+  { id: 4, who: Hamster, status: false, found: false  },
+  { id: 5, who: Parrot, status: false, found: false  },
+  { id: 6, who: Rooster, status: false, found: false  },
+  { id: 7, who: Turkey, status: false, found: false  },
+  { id: 8, who: Jellyfish, status: false, found: false  },
+  { id: 9, who: Octopus, status: false, found: false  },
+  { id: 10, who: Raccoon, status: false, found: false  },
+  { id: 11, who: Rhinoceros, status: false, found: false  },
+  { id: 12, who: Squirrel, status: false, found: false  },
+  { id: 13, who: Stingray, status: false, found: false  },
+  { id: 14, who: Tiger, status: false, found: false  },
+  { id: 15, who: Whale, status: false, found: false  },
 ]
 
 
@@ -49,6 +69,9 @@ let anim1 = [
 function App() {
   const [list, setList] = React.useState([]);
   const [clickCount, setClickCount] = useState(0);
+  const [Select, setSelect] = useState();
+  const [found, setFound] = useState([]);
+
 
   useEffect(() => {
     getRandomValues();
@@ -84,19 +107,42 @@ function App() {
     }));
 
     setList(updatedAnim1);
+
+    
   };
+
+
+  const SelectedItems = (id) => {
+    const animals = [...list];
+
+    if (Select === id) {
+      
+      for (let i = 0; i < animals.length; i++) {
+        if (animals[i].id === id) {
+          animals[i].found = true;
+        }
+      }
+      setList(animals);
+
+    }
+
+    else setSelect(id);
+
+  }
 
 
 
   let card = list.map((e, index) => (
-    <CardFlip key={index} index={index} id={e.id} who={e.who} status={e.status}
-      setList={setList} list={list} clickCount={clickCount} setClickCount={setClickCount} deactivateAllAnimals={deactivateAllAnimals} />
+    <CardFlip key={index} index={index} id={e.id} who={e.who} status={e.status} found={e.found}
+      setList={setList} list={list} clickCount={clickCount} setClickCount={setClickCount}
+      deactivateAllAnimals={deactivateAllAnimals} SelectedItems={SelectedItems}
+      setSelect={setSelect} Select={Select} />
   ));
 
   return (
     <div className="App">
       <header className="App-header">
-        <div className="palte">{card}</div>
+        <div className="plate">{card}</div>
       </header>
     </div>
   );
