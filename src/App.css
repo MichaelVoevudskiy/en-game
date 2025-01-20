@@ -19,6 +19,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   max-height: 90%;
+  margin-bottom: 10px;
 }
 
 @keyframes example {
@@ -38,14 +39,12 @@
 }
 
 .resetgamebt {
+  margin-top: 10px;
   width: 100px;
   height: 30px;
   background-color: blueviolet;
   border-radius: 5px;
   margin-bottom: 10px;
-
-
-
 }
 
 .resetgamebt:hover {
