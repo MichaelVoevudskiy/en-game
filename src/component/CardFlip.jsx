@@ -6,7 +6,7 @@ const CardFlip = (props) => {
   const handleClick = () => {
 
    
-    if (props.status == false) {
+    if (props.status === false) {
       // Копируем список и обновляем статус карточки
       const card = [...props.list];
 

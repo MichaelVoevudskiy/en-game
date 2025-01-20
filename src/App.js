@@ -70,7 +70,7 @@ function App() {
   const [list, setList] = React.useState([]);
   const [clickCount, setClickCount] = useState(0);
   const [Select, setSelect] = useState();
-  const [found, setFound] = useState([]);
+  // const [found, setFound] = useState([]);
 
 
   useEffect(() => {
